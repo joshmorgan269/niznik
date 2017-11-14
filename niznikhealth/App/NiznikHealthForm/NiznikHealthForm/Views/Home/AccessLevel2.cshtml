@@ -1,0 +1,39 @@
+﻿<h1>New Employee Initiation</h1>
+<span class="req">*Required</span>
+<div class="pageHeader">Access</div>
+<big>What buildings will employee need access to?<span class="req">*</span></big><br />
+
+<form ng-controller="ALevel2">
+    <div class="form-check">
+        <div ng-repeat="building in buildingsAccess2">
+            <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" ng-value="building.AccessID" ng-model="selectedB2.selectedAccessID[$index]" ng-change="updateSelectedBuilding2(building.AccessID)" required>
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">{{::building.Access_Area}}</span>
+            </label>
+        </div>
+        <input type="text" class="form-control" ng-if="isOtherBA2Selected()" ng-model="selectedB2.other" required />
+    </div>
+
+    <div class="form-group">
+        <p><h3>Restricted Access</h3></p>
+        <label for="additionalAL2">
+            <small>Please clarify if employee will need special access to specific offices within the buildings selected such as Nurses Station and additional offices with key card restrictions.</small>
+        </label>
+        <input type="text" class="form-control" id="additionalAL2" ng-model="otherBuilding2"/>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                <input type="button" class="btn btn-primary" value="Back" onclick="window.history.go(-1); return false;" />
+                <input type="button" class="btn btn-primary" value="Next" ng-click="gotoAL3()" />
+            </div>
+            <div class="col-sm-6">
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 84%" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p><small>Page 5 of 6</small></p>
+            </div>
+        </div>
+    </div>
+</form>

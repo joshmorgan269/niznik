@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="niznik_dbModelStoreContainer" CdmEntityContainer="niznik_dbEntities">
+    <EntitySetMapping Name="ACCESSLEVELs">
+      <EntityTypeMapping TypeName="niznik_dbModel.ACCESSLEVEL">
+        <MappingFragment StoreEntitySet="ACCESSLEVEL">
+          <ScalarProperty Name="AccessID" ColumnName="AccessID" />
+          <ScalarProperty Name="Access_Level" ColumnName="Access_Level" />
+          <ScalarProperty Name="Access_Area" ColumnName="Access_Area" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANies">
+      <EntityTypeMapping TypeName="niznik_dbModel.COMPANY">
+        <MappingFragment StoreEntitySet="COMPANY">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HIRINGMANAGERs">
+      <EntityTypeMapping TypeName="niznik_dbModel.HIRINGMANAGER">
+        <MappingFragment StoreEntitySet="HIRINGMANAGER">
+          <ScalarProperty Name="Hiring_ManagerID" ColumnName="Hiring_ManagerID" />
+          <ScalarProperty Name="Hiring_Manager_Name" ColumnName="Hiring_Manager_Name" />
+          <ScalarProperty Name="Hiring_Manager_Email" ColumnName="Hiring_Manager_Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JOB_ROLE">
+      <EntityTypeMapping TypeName="niznik_dbModel.JOB_ROLE">
+        <MappingFragment StoreEntitySet="JOB_ROLE">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="Job_Role1" ColumnName="Job_Role" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICES_EQUIPMENT">
+      <EntityTypeMapping TypeName="niznik_dbModel.SERVICES_EQUIPMENT">
+        <MappingFragment StoreEntitySet="SERVICES_EQUIPMENT">
+          <ScalarProperty Name="Service_EquipmentID" ColumnName="Service_EquipmentID" />
+          <ScalarProperty Name="Service_Equipment" ColumnName="Service_Equipment" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANY_ACCESSLEVEL">
+      <EntityTypeMapping TypeName="niznik_dbModel.COMPANY_ACCESSLEVEL">
+        <MappingFragment StoreEntitySet="COMPANY_ACCESSLEVEL">
+          <ScalarProperty Name="Access_Level" ColumnName="Access_Level" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Company_AccessID" ColumnName="Company_AccessID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEE_INITIATION">
+      <EntityTypeMapping TypeName="niznik_dbModel.EMPLOYEE_INITIATION">
+        <MappingFragment StoreEntitySet="EMPLOYEE_INITIATION">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+          <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Hiring_Manager_ID" ColumnName="Hiring_Manager_ID" />
+          <ScalarProperty Name="Today_Date" ColumnName="Today_Date" />
+          <ScalarProperty Name="Access_Level3_Other" ColumnName="Access_Level3_Other" />
+          <ScalarProperty Name="Access_Level3" ColumnName="Access_Level3" />
+          <ScalarProperty Name="Access_Level2_Restriction" ColumnName="Access_Level2_Restriction" />
+          <ScalarProperty Name="Access_Level2_Other" ColumnName="Access_Level2_Other" />
+          <ScalarProperty Name="Access_Level2" ColumnName="Access_Level2" />
+          <ScalarProperty Name="Access_Level1_Restriction" ColumnName="Access_Level1_Restriction" />
+          <ScalarProperty Name="Access_Level1_Other" ColumnName="Access_Level1_Other" />
+          <ScalarProperty Name="Access_Level1" ColumnName="Access_Level1" />
+          <ScalarProperty Name="Work_For_Additional_Info" ColumnName="Work_For_Additional_Info" />
+          <ScalarProperty Name="Work_For_Others" ColumnName="Work_For_Others" />
+          <ScalarProperty Name="Work_For" ColumnName="Work_For" />
+          <ScalarProperty Name="Additional_Services" ColumnName="Additional_Services" />
+          <ScalarProperty Name="Services_Equipment_Others" ColumnName="Services_Equipment_Others" />
+          <ScalarProperty Name="Services_Equipment" ColumnName="Services_Equipment" />
+          <ScalarProperty Name="Job_Others" ColumnName="Job_Others" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Job_Role" ColumnName="Job_Role" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

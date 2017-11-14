@@ -1,0 +1,38 @@
+﻿<h1>New Employee Initiation{{empName}}</h1>
+<span class="req">*Required</span>
+<div class="pageHeader">Services &amp; Equpiment Needed</div>
+Here you will pick the services new employee will need to be enrolled in, necessary equipment and company he/she will be working for, as well as their role.<br />
+<big class="req">*</big><br />
+<form ng-controller="ServiceEq">
+    <div class="form-check">
+        <div ng-repeat="service in services">
+            <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" ng-value="service.Service_EquipmentID" ng-model="selectedService.selectedId[$index]" ng-change="updateSelected(service.Service_EquipmentID)" required>
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">{{::service.Service_Equipment}}</span>
+            </label>
+        </div>
+        <input type="text" class="form-control" ng-if="isOtherSelected()" ng-model="selectedService.other"  required/>
+    </div>
+    <div class="form-group">
+        <p><h3>Additional Services</h3></p>
+        <label for="additionalSer1">
+            <small>Please clarify if new employee is inheriting any equipment from a previous employee such as desks, phones, computers, etc. Elaborate on additional services needed not available from the options above.</small>
+        </label>
+        <input type="text" class="form-control" id="additionalSer1" ng-model="additionalService1"/>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                <input type="button" class="btn btn-primary" value="Back" onclick="location.href='@Url.Action("Index", "Home")'" />
+                <input type="button" class="btn btn-primary" value="Next" ng-click="gotoCompanies()" />
+            </div>
+            <div class="col-sm-6">
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 34%" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p><small>Page 2 of 6</small></p>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="niznik_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACCESSLEVEL">
+    <Key>
+      <PropertyRef Name="AccessID" />
+    </Key>
+    <Property Name="AccessID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Access_Level" Type="Int32" Nullable="false" />
+    <Property Name="Access_Area" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HIRINGMANAGER">
+    <Key>
+      <PropertyRef Name="Hiring_ManagerID" />
+    </Key>
+    <Property Name="Hiring_ManagerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hiring_Manager_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Hiring_Manager_Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JOB_ROLE">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Job_Role1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SERVICES_EQUIPMENT">
+    <Key>
+      <PropertyRef Name="Service_EquipmentID" />
+    </Key>
+    <Property Name="Service_EquipmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Service_Equipment" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="niznik_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACCESSLEVELs" EntityType="Self.ACCESSLEVEL" />
+    <EntitySet Name="COMPANies" EntityType="Self.COMPANY" />
+    <EntitySet Name="HIRINGMANAGERs" EntityType="Self.HIRINGMANAGER" />
+    <EntitySet Name="JOB_ROLE" EntityType="Self.JOB_ROLE" />
+    <EntitySet Name="SERVICES_EQUIPMENT" EntityType="Self.SERVICES_EQUIPMENT" />
+    <EntitySet Name="COMPANY_ACCESSLEVEL" EntityType="niznik_dbModel.COMPANY_ACCESSLEVEL" />
+    <EntitySet Name="EMPLOYEE_INITIATION" EntityType="niznik_dbModel.EMPLOYEE_INITIATION" />
+  </EntityContainer>
+  <EntityType Name="COMPANY_ACCESSLEVEL">
+    <Key>
+      <PropertyRef Name="Company_AccessID" />
+    </Key>
+    <Property Name="Company_AccessID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="Access_Level" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE_INITIATION">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Full_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Job_Role" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Start_Date" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Job_Others" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Services_Equipment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Services_Equipment_Others" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Additional_Services" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Work_For" Type="Int32" Nullable="false" />
+    <Property Name="Work_For_Others" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Work_For_Additional_Info" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Access_Level1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Access_Level1_Other" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Access_Level1_Restriction" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Access_Level2" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Access_Level2_Other" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Access_Level2_Restriction" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Access_Level3" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Access_Level3_Other" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Today_Date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Hiring_Manager_ID" Type="Int32" Nullable="false" />
+    <Property Name="Created_Date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_By" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

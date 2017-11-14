@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>New Employee Initiation</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body ng-app="myApp">
+    <div class="formContent" @*ng-controller="formController"*@>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/tether.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    <script src="~/Scripts/myApp.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

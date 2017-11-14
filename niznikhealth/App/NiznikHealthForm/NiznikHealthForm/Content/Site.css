@@ -1,0 +1,34 @@
+﻿.req {
+    color: red;
+}
+
+.formContent {
+    width: 640px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    box-shadow: 0 0 2px grey;
+    min-height:700px;
+}
+
+.topBanner {
+    width: 100%;
+    height: 10px;
+    /*background-color: rgb(140, 158, 255);*/
+    background-color: rgb(140, 158, 255);
+}
+
+
+body {
+    background: linear-gradient(180deg, rgb(63, 81, 181) 0%,rgb(63, 81, 181) 20%, #ede7f6 20%, #ede7f6);
+    padding-top: 200px;
+    padding-bottom: 100px;
+}
+
+.pageHeader {
+    width: 100%;
+    color: white;
+    background-color: rgb(63, 81, 181);
+    font-size:medium;
+    padding:10px;
+}

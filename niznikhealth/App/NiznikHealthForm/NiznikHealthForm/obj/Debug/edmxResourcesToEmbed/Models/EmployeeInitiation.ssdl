@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="niznik_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCESSLEVEL">
+    <Key>
+      <PropertyRef Name="AccessID" />
+    </Key>
+    <Property Name="AccessID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Access_Level" Type="int" Nullable="false" />
+    <Property Name="Access_Area" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company_Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="COMPANY_ACCESSLEVEL">
+    <Key>
+      <PropertyRef Name="Company_AccessID" />
+    </Key>
+    <Property Name="Company_AccessID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="Access_Level" Type="int" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE_INITIATION">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Full_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Job_Role" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Start_Date" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Job_Others" Type="varchar" MaxLength="100" />
+    <Property Name="Services_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Services_Equipment_Others" Type="varchar" MaxLength="100" />
+    <Property Name="Additional_Services" Type="varchar" MaxLength="150" />
+    <Property Name="Work_For" Type="int" Nullable="false" />
+    <Property Name="Work_For_Others" Type="varchar" MaxLength="150" />
+    <Property Name="Work_For_Additional_Info" Type="varchar" MaxLength="150" />
+    <Property Name="Access_Level1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Access_Level1_Other" Type="varchar" MaxLength="150" />
+    <Property Name="Access_Level1_Restriction" Type="varchar" MaxLength="150" />
+    <Property Name="Access_Level2" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Access_Level2_Other" Type="varchar" MaxLength="150" />
+    <Property Name="Access_Level2_Restriction" Type="varchar" MaxLength="150" />
+    <Property Name="Access_Level3" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Access_Level3_Other" Type="varchar" MaxLength="150" />
+    <Property Name="Today_Date" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hiring_Manager_ID" Type="int" Nullable="false" />
+    <Property Name="Created_Date" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="150" />
+    <Property Name="Updated_Date" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HIRINGMANAGER">
+    <Key>
+      <PropertyRef Name="Hiring_ManagerID" />
+    </Key>
+    <Property Name="Hiring_ManagerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hiring_Manager_Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Hiring_Manager_Email" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JOB_ROLE">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Job_Role" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="SERVICES_EQUIPMENT">
+    <Key>
+      <PropertyRef Name="Service_EquipmentID" />
+    </Key>
+    <Property Name="Service_EquipmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Service_Equipment" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="niznik_dbModelStoreContainer">
+    <EntitySet Name="ACCESSLEVEL" EntityType="Self.ACCESSLEVEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPANY" EntityType="Self.COMPANY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPANY_ACCESSLEVEL" EntityType="Self.COMPANY_ACCESSLEVEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEE_INITIATION" EntityType="Self.EMPLOYEE_INITIATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HIRINGMANAGER" EntityType="Self.HIRINGMANAGER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JOB_ROLE" EntityType="Self.JOB_ROLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SERVICES_EQUIPMENT" EntityType="Self.SERVICES_EQUIPMENT" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
